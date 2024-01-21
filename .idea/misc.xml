@@ -4,4 +4,7 @@
     <option name="sdkName" value="nutrimate-flask" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="nutrimate-flask" project-jdk-type="Python SDK" />
+  <component name="PyCharmProfessionalAdvertiser">
+    <option name="shown" value="true" />
+  </component>
 </project>
