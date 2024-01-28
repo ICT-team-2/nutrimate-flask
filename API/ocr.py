@@ -11,6 +11,7 @@ from google.oauth2 import service_account
 from flask import request
 import os
 import re
+import json
 class OCR(Resource):
     def __init__(self):
         self.credentials_path= os.environ['GOOGLE_APPLICATION_CREDENTIALS']#프로젝트 ID,Private Key정보가 있는 .json파일의 경로
@@ -91,4 +92,6 @@ class OCR(Resource):
                 else:
                     sorted_text += f"{line.strip()}\n"
 
-        return sorted_text
+        # JSON 형식으로 변환하여 반환
+        result_json = {"text": sorted_text}
+        return json.dumps(result_json, ensure_ascii=False, indent=2)
