@@ -5,7 +5,7 @@ import os
 from asgiref.wsgi import WsgiToAsgi
 import uvicorn
 #OCR서비용
-from API.ocr import OCR
+from api.ocr import OCR
 
 app = Flask(__name__)
 CORS(app)
