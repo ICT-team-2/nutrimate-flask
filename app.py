@@ -25,4 +25,4 @@ POST /ocr
 api.add_resource(OCR,'/ocr')
 
 if __name__ == '__main__':
-    uvicorn.run(asgi_app, port=5000, host='0.0.0.0')
+    uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
