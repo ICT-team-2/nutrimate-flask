@@ -7,7 +7,6 @@ import uvicorn
 #OCR서비용
 from api.ocr import OCR
 
-from api.profile import ProfileResource
 from api.recipe import RecipeResource
 
 app = Flask(__name__)
@@ -22,7 +21,6 @@ api = Api(app)
 def home():
     return "Hello, ICT!"
 
-api.add_resource(ProfileResource, '/profile_img')
 api.add_resource(RecipeResource,'/recipe_info')
 
 asgi_app = WsgiToAsgi(app)
