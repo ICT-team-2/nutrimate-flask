@@ -7,6 +7,9 @@ import uvicorn
 #OCR서비용
 from api.ocr import OCR
 
+from api.profile import ProfileResource
+from api.recipe import RecipeResource
+
 app = Flask(__name__)
 CORS(app)
 
@@ -14,6 +17,13 @@ app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'upload')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB
 
 api = Api(app)
+
+@app.route('/')
+def home():
+    return "Hello, ICT!"
+
+api.add_resource(ProfileResource, '/profile_img')
+api.add_resource(RecipeResource,'/recipe_info')
 
 asgi_app = WsgiToAsgi(app)
 
