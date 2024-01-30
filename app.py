@@ -4,8 +4,10 @@ from flask_cors import CORS
 import os
 from asgiref.wsgi import WsgiToAsgi
 import uvicorn
-#OCR서비용
+#OCR서비스용
 from api.ocr import OCR
+#ServiceWorker서비스용
+from api.ServiceWorker import ServiceWorker, schedule_notification as schedule
 
 app = Flask(__name__)
 CORS(app)
@@ -23,6 +25,16 @@ OCR
 POST /ocr
 '''
 api.add_resource(OCR,'/ocr')
+
+'''
+ServiceWorker
+Post /serviceworker
+title:
+body:
+image_url:
+token:
+'''
+api.add_resource(ServiceWorker,'/serviceworker')
 
 if __name__ == '__main__':
     uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
