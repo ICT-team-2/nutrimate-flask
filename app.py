@@ -29,10 +29,6 @@ api.add_resource(OCR,'/ocr')
 '''
 ServiceWorker
 Post /serviceworker
-title:
-body:
-image_url:
-token:
 '''
 api.add_resource(ServiceWorker,'/serviceworker')
 

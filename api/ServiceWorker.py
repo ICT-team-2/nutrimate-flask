@@ -1,6 +1,5 @@
 # pip install firebase-admin
 
-from flask import request
 from flask_restful import Resource,reqparse
 from firebase_admin import credentials, messaging, initialize_app
 import datetime, time
