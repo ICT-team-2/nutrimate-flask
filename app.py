@@ -7,7 +7,7 @@ import uvicorn
 #OCR서비스용
 from api.ocr import OCR
 #ServiceWorker서비스용
-from api.ServiceWorker import ServiceWorker, schedule_notification as schedule
+from api.ServiceWorker import ServiceWorker
 
 app = Flask(__name__)
 CORS(app)

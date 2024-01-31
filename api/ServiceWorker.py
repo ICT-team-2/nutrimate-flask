@@ -37,7 +37,7 @@ def send_notification(title, body, image_url, token):
         print('Error sending message:', e)
         return {"success": False, "error": str(e)}, 500
 
-# 사용자로부터 입력받은 시간에 알림을 예약하는 함수
+# 스케줄링 - 사용자로부터 입력받은 시간에 알림을 예약하는 함수
 def schedule_notification(alarm_time, title, body, img_url, token):
     current_time = datetime.datetime.now()
     alarm_datetime = datetime.datetime.strptime(alarm_time, "%Y-%m-%dT%H:%M")
@@ -77,25 +77,26 @@ class ServiceWorker(Resource):
         except Exception as e:
             return {"success": False, "error": str(e)}, 500
 
+    # 스케줄링
     def get(self):
         try:
             parser = reqparse.RequestParser()
             parser.add_argument('alarm_time', type=str, required=True, help='Alarm time cannot be blank')
+            parser.add_argument('title', type=str, required=True, help='Title cannot be blank')
+            parser.add_argument('body', type=str, required=True, help='Body cannot be blank')
+            parser.add_argument('image_url', type=str, required=True, help='Image URL cannot be blank')
+            parser.add_argument('token', type=str, required=True, help='Token cannot be blank')
 
             args = parser.parse_args()
 
             alarm_time = args['alarm_time']
-            title = request.args.get('title', 'Default Title')  # Default title if not provided
-            body = request.args.get('body', 'Default Body')  # Default body if not provided
-            image_url = request.args.get('image_url', 'Default Image URL')  # Default image URL if not provided
-            token = request.args.get('token', 'Default Token')  # Default token if not provided
+            title = args['title']
+            body = args['body']
+            image_url = args['image_url']
+            token = args['token']
 
             # 알림 예약하기
             schedule_notification(alarm_time, title, body, image_url, token)
             return {"success": True, "message": "Notification scheduled successfully"}, 200
         except Exception as e:
             return {"success": False, "error": str(e)}, 500
-
-    # 새로운 엔드포인트 함수로 사용
-    def schedule():
-        return ServiceWorker().get()
