@@ -4,8 +4,8 @@ from flask_cors import CORS
 import os
 from asgiref.wsgi import WsgiToAsgi
 import uvicorn
-#OCR서비용
-from api.ocr import OCR
+
+from api.ChatBot import ChatBot
 
 app = Flask(__name__)
 CORS(app)
@@ -16,13 +16,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB
 api = Api(app)
 
 asgi_app = WsgiToAsgi(app)
-
-
-'''
-OCR
-POST /ocr
-'''
-api.add_resource(OCR,'/ocr')
+api.add_resource(ChatBot,'/chatbot')
 
 if __name__ == '__main__':
     uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
