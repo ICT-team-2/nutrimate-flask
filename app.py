@@ -9,6 +9,8 @@ from api.ocr import OCR
 #ServiceWorker서비스용
 from api.ServiceWorker import ServiceWorker
 
+from api.recipe import RecipeResource
+
 app = Flask(__name__)
 CORS(app)
 
@@ -16,6 +18,12 @@ app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'upload')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB
 
 api = Api(app)
+
+@app.route('/')
+def home():
+    return "Hello, ICT!"
+
+api.add_resource(RecipeResource,'/recipe_info')
 
 asgi_app = WsgiToAsgi(app)
 
