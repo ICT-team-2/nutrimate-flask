@@ -32,7 +32,7 @@ def home():
     return "Hello, ICT!"
 
 
-api.add_resource(RecipeResource, '/recipe_info')
+api.add_resource(RecipeResource, '/recipe-info')
 
 asgi_app = WsgiToAsgi(app)
 
