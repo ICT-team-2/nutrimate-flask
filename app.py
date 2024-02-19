@@ -9,7 +9,8 @@ from api.ChatBot import ChatBot
 # OCR서비스용
 from api.ocr import OCR
 # ServiceWorker서비스용
-from api.ServiceWorker import ServiceWorker
+#from api.ServiceWorker import ServiceWorker
+from api.walk_course import WalkCourse
 
 from api.recipe import RecipeResource
 
@@ -40,6 +41,7 @@ api.add_resource(ChatBot, '/chatbot')
 api.add_resource(Navernews, '/navernews')
 api.add_resource(Exercise, '/exercise-info')
 api.add_resource(Nutrients, '/nutrients-info')
+api.add_resource(WalkCourse,'/walk')
 '''
 OCR
 POST /ocr
@@ -50,7 +52,7 @@ api.add_resource(OCR, '/ocr')
 ServiceWorker
 Post /serviceworker
 '''
-api.add_resource(ServiceWorker, '/serviceworker')
+#api.add_resource(ServiceWorker, '/serviceworker')
 
 if __name__ == '__main__':
     uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
