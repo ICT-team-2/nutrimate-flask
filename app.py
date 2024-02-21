@@ -9,12 +9,13 @@ from api.ChatBot import ChatBot
 # OCR서비스용
 from api.ocr import OCR
 # ServiceWorker서비스용
-from api.ServiceWorker import ServiceWorker
+#from api.ServiceWorker import ServiceWorker
 
 from api.recipe import RecipeResource
 
 from api.news import Navernews, Exercise, Nutrients
-
+#얼굴 감정 분석용
+from api.face_emotion import FaceEmotion
 
 app = Flask(__name__)
 CORS(app,
@@ -50,7 +51,12 @@ api.add_resource(OCR, '/ocr')
 ServiceWorker
 Post /serviceworker
 '''
-api.add_resource(ServiceWorker, '/serviceworker')
+#api.add_resource(ServiceWorker, '/serviceworker')
+'''
+FaceEmotion
+Post /face
+'''
+api.add_resource(FaceEmotion,'/face')
 
 if __name__ == '__main__':
     uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
