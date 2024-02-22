@@ -23,8 +23,11 @@ class WalkCourse(Resource):
                          (df['COURS_LEVEL_NM'] == difficulty) &
                          (df['COURS_LT_CN'] <= distance)]
 
+        # 필요한 컬럼만 선택
+        result_df = filtered_df[['WLK_COURS_FLAG_NM', 'WLK_COURS_NM', 'COURS_DC', 'COURS_LEVEL_NM', 'COURS_LT_CN', 'COURS_TIME_CN', 'LNM_ADDR']]
+
         # 필터링된 데이터를 JSON 형태로 변환
-        result = filtered_df.to_dict(orient='records')
+        result = result_df.to_dict(orient='records')
 
         # JSON을 문자열로 변환하고, Response 객체에 담아 반환
         return Response(json.dumps(result, ensure_ascii=False), mimetype='application/json')
