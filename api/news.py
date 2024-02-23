@@ -21,6 +21,8 @@ class Navernews(Resource):
             # CSV 파일 읽기
             df = pd.read_csv(csv_file_path)
 
+            df.drop_duplicates(subset='title', keep='first', inplace=True)
+
             # JSON으로 변환
             json_data = df.to_json(orient='records')
             decoded_data = json.loads(json_data)
