@@ -9,12 +9,14 @@ from api.ChatBot import ChatBot
 # OCR서비스용
 from api.ocr import OCR
 # ServiceWorker서비스용
-from api.ServiceWorker import ServiceWorker
+#from api.ServiceWorker import ServiceWorker
 
 from api.recipe import RecipeResource
 
 from api.news import Navernews, Exercise, Nutrients
 
+#알레르기별 음식 추천용
+from api.allergy import Allergy
 
 app = Flask(__name__)
 CORS(app,
@@ -50,7 +52,12 @@ api.add_resource(OCR, '/ocr')
 ServiceWorker
 Post /serviceworker
 '''
-api.add_resource(ServiceWorker, '/serviceworker')
+#api.add_resource(ServiceWorker, '/serviceworker')
+'''
+Allergy
+Post /allergy
+'''
+api.add_resource(Allergy,'/allergy')
 
 if __name__ == '__main__':
     uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
