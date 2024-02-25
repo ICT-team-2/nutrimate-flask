@@ -5,6 +5,8 @@ import os
 from asgiref.wsgi import WsgiToAsgi
 import uvicorn
 
+from api.profile import ProfileResource
+
 from api.ChatBot import ChatBot
 # OCR서비스용
 from api.ocr import OCR
@@ -32,8 +34,6 @@ def home():
     return "Hello, ICT!"
 
 
-api.add_resource(RecipeResource, '/recipe-info')
-
 asgi_app = WsgiToAsgi(app)
 
 api.add_resource(ChatBot, '/chatbot')
@@ -51,6 +51,8 @@ ServiceWorker
 Post /serviceworker
 '''
 api.add_resource(ServiceWorker, '/serviceworker')
+api.add_resource(ProfileResource, '/profile/img')
+api.add_resource(RecipeResource, '/recipe-info')
 
 if __name__ == '__main__':
     uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
