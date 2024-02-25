@@ -367,3 +367,4 @@ instance/*
 !instance/.gitignore
 
 
+.idea/saveactions_settings.xml
