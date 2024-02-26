@@ -5,9 +5,9 @@ import json
 import jwt
 
 class Allergy(Resource):
-    def post(self):
+    def get(self):
         # 헤더에서 토큰 가져오기
-        token = request.headers.get('Authorization').split(' ')[1]
+        token = request.args.get('token')
 
         # 토큰에서 사용자 정보 가져오기
         user_info = jwt.decode(token, options={"verify_signature": False})

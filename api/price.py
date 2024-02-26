@@ -3,8 +3,8 @@ from flask import request
 import pandas as pd
 
 class Price(Resource):
-    def post(self):
-        price = request.json['price']
+    def get(self):
+        price = int(request.args.get('price'))
 
         # csv 파일 불러오기
         df = pd.read_csv('./data/menu_price.csv', encoding='cp949')
