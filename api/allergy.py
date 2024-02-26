@@ -40,7 +40,15 @@ class Allergy(Resource):
                 recipes = data['hits']
 
                 # 레시피 정보를 총 레시피 리스트에 추가
-                total_recipes += recipes
+                for recipe in recipes:
+                    recipe_info = recipe['recipe']
+                    total_recipes.append({
+                        '이미지': recipe_info['image'],
+                        '음식 이름': recipe_info['label'],
+                        '칼로리': recipe_info['calories']/recipe_info['yield'], # 1인분당 칼로리 정보
+                        '건강 관련 정보': recipe_info['healthLabels'],
+                        '영양소 정보': recipe_info['totalNutrients']
+                    })
 
         # 레시피 정보 반환
         return jsonify(total_recipes)
