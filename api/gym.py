@@ -3,12 +3,12 @@ from flask_restful import Resource
 import pandas as pd
 
 class GymRecommend(Resource):
-    def post(self):
+    def get(self):
         # csv 파일 읽기
         df = pd.read_csv('data/fulldata_10_42_01_P_체력단련장업.csv', encoding='cp949')
 
         # 사용자 입력 받기
-        place = request.json.get('place')
+        place = request.args.get('place')
 
         # 주소로 검색
         df['소재지전체주소'] = df['소재지전체주소'].fillna('')
