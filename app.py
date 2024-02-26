@@ -17,6 +17,8 @@ from api.news import Navernews, Exercise, Nutrients
 
 #알레르기별 음식 추천용
 from api.allergy import Allergy
+#가격별 음식 추천용
+from api.price import Price
 
 app = Flask(__name__)
 CORS(app,
@@ -58,6 +60,11 @@ Allergy
 Post /allergy
 '''
 api.add_resource(Allergy,'/allergy')
+'''
+Pricd
+Post /price
+'''
+api.add_resource(Price,'/price')
 
 if __name__ == '__main__':
     uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
