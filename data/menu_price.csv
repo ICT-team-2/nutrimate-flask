@@ -39,7 +39,7 @@ NUM,MENU_NM,AVG_PRC,식단,이미지,칼로리,지방,탄수화물,단백질
 38,비빔밥,9502,일반,https://m.jinganebanchan.com/web/product/big/20200603/f74fa6fdc6bdaab27024795e1097d7c1.jpg,586,13.99,89.78,22.05
 39,김치찌개,8172,일반,https://static.wtable.co.kr/image-resize/production/service/recipe/291/4x3/a2421dff-e56c-40bd-8b40-06a91fc000a9.jpg,121,7.57,6.47,7.51
 40,삼겹살,13791,고단백,https://static.wtable.co.kr/image/production/service/product/5562/1a9f385a-6c88-41a8-a958-60693f2a4eea.jpg,661,56.43,1.18,34.47
-41,삼계탕,15831,고단백,https://lh3.googleusercontent.com/proxy/ZQ52Pxe5FmP8Znc38Y4hi113gGsdbgi1zxWxKHMEktByq7P4bUo95zdGTmgTjEOxt1vwN5Ze19qwommlaIN5---VeNAbwrXHGs4v7HiiE574hQuK,454,15.89,20.41,55.5
+41,삼계탕,15831,고단백,https://src.hidoc.co.kr/image/lib/2022/7/15/1657867409681_0.jpg,454,15.89,20.41,55.5
 42,에그누들,8213,비건,https://static.wtable.co.kr/image/production/service/recipe/1751/2f15491a-3c50-4c1f-9854-1d3d6a0e0e11.jpg,366,1.6,76.5,11.5
 43,김밥,3055,일반,https://semie.cooking/image/post/recipe/im/zl/wjcbcjcr/html/112439523pgus.jpg,485,15.3,73.5,12.2
 44,참치죽,8000,일반,https://www.foodshop.co.kr/shopimages/cookey01/033002001237.jpg?1479694442,190,4.3,34,4
@@ -50,7 +50,7 @@ NUM,MENU_NM,AVG_PRC,식단,이미지,칼로리,지방,탄수화물,단백질
 49,곱창,15723,일반,https://i.namu.wiki/i/EQL4wG6Dv3E7fM4UIwAmldY0aJdhcXoNVQnCPQZY0q-cOpwn34rn4QiOUjBJ5yi37TLi9DaAn1JvuAHGyMTOdw.webp,289,24.19,0,15.49
 50,육회,22414,일반,https://www.hyun-deok.com/data/goods/1/2023/03/39_temp_16798979884045view.png,101,4.38,2.13,12.56
 51,양념치킨,15217,일반,https://cdn.thescoop.co.kr/news/photo/202010/41306_58347_1055.jpg,2000,93,66,171
-52,연어회,21600,고단백,https://thingotr4652.cdn-nhncommerce.com/data/editor/goods/201005/3baf89d87e6556b4cbfc0adb400a5f68_145416.jpg,242,9.84,0,35.89
+52,연어회,21600,고단백,https://sitem.ssgcdn.com/04/48/03/item/1000050034804_i2_750.jpg,242,9.84,0,35.89
 53,돈까스,11000,일반,https://lh3.googleusercontent.com/proxy/XKo96XTw4qol21peX0fShAi7Ml86fxkQP_HYpOg9l_2LWhG0KqBNF0TObwgfpIGCjt2xMo26CtHQCcN_jGdDnlCTubmSng,586,30.6,24.56,45.16
 54,볶음밥,7000,일반,https://m.cj.co.kr/images/theKitchen/PHON/0000001959/0000007704/0000001959.jpg,493,23.65,53.28,15.24
 55,짜장면,7500,일반,https://i.namu.wiki/i/zLCSMHVvvt9_ZJyb33kImeEfmrBewsgNll9AyPyVcyNNX2frg1svs7I-nrm-seExLN7BcJ__RJMJCGKDIUkgPg.webp,785,19.98,129.41,26.81
@@ -67,7 +67,7 @@ NUM,MENU_NM,AVG_PRC,식단,이미지,칼로리,지방,탄수화물,단백질
 66,밀푀유나베,10000,일반,https://recipe1.ezmember.co.kr/cache/recipe/2015/10/22/43e68588f4cd0e1a09ebdb184246c4a81.jpg,529,13,52,51
 67,탕수육,17500,일반,https://blog.kakaocdn.net/dn/qnIz2/btqSdtiK7C4/Thg8RwPPLh1slbBI8Vsksk/img.jpg,591,23.93,64.73,26.99
 68,부대찌개,6000,일반,https://foodyap.co.kr/shopimages/goldplate1/039000000012.jpg?1560850364,626,38.55,41.11,27.7
-69,오리구이,31000,고단백,https://lh3.googleusercontent.com/proxy/zoai-DgcKzzZIK1bno5mnWbXs1C-kQGtPW9ZyULfTIShXX6CIWC0J6sPC8Fp8pBQvjUQgyM6LsJxyhDEHc-Jsb5P3VoTwbb2PCx2F3jJmLz2Ur9AVQ,462,37.19,0,29.68
+69,오리구이,31000,고단백,https://blog.kakaocdn.net/dn/bVvCUT/btqFOXWWjxV/oXyj3Iyy7wbSvRnHcraW5K/img.png,462,37.19,0,29.68
 70,불고기,10900,일반,https://www.foodjang.com/New/03/221006979/221006979_b_2.jpg,486,23.86,14.77,48.38
 71,닭가슴살샐러드,9900,키토,https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjFfMjU0/MDAxNjI0Mjg0ODA5ODEx.PWo1hEfQsURIMb0gpy76RrrFkhG0hN4riMLG7LyFMbAg.7Abi9Ie3Pwn0WGiEV3owpp0rZ0Fa2ho6sZl8oaOijc4g.JPEG.lalacucina/%EB%8B%AD%EA%B0%80%EC%8A%B4%EC%82%B4_%EC%83%90%EB%9F%AC%EB%93%9C.jpg?type=w800,234,7,23,20
 72,짬뽕,8000,일반,https://wooltariusa.com/cdn/shop/products/55.jpg?v=1684855939&width=1400,764,12,133.56,28.79
@@ -117,7 +117,7 @@ NUM,MENU_NM,AVG_PRC,식단,이미지,칼로리,지방,탄수화물,단백질
 116,코다리조림,28000,일반,https://m.62life.com/images/gdimg/p_1[10].jpg,219,5.14,11.47,29.08
 117,소고기뭇국,9000,일반,https://thenaum.cdn-nhncommerce.com/data/goods/21/05/20/1000008258/1000008258_detail_039.jpg,192,8.62,12.07,16.43
 118,연어 포케,13900,키토,https://img.siksinhot.com/place/1579502890490981.jpg?c=Y,470,14,56,30
-119,라따뚜이라자냐,15000,비건,https://roomnhtr8103.cdn-nhncommerce.com/data/goods/21/09/39/186798066/186798066_detail_166.jpg,335,10,42.08,19.28
+119,라따뚜이라자냐,15000,비건,https://s3-ap-northeast-1.amazonaws.com/agreable-shoplink/item/templates/a7fd0bd75a884e24adf66d6d5773df9b.jpg,335,10,42.08,19.28
 120,가지덮밥,9000,비건,https://static.wtable.co.kr/image/production/service/recipe/1710/4a47acbf-ff01-42bb-b571-4a5fef49283b.jpg,520,14,133,20
 121,두부면파스타,8000,비건,https://malltr0059.cdn-nhncommerce.com/data/goods/22/05/19/1000000885/1000000885_detail_144.png,261,17,11,16
 122,그릭요거트,4500,키토,https://www.k-health.com/news/photo/202312/69252_75946_1827.jpg,117,9.19,5.04,4.05
