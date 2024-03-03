@@ -12,7 +12,9 @@ from api.text import Text
 from api.word import Word
 
 app = Flask(__name__)
-CORS(app)
+CORS(app,
+    resources={r'*': {'origins': 'http://localhost:5555'}},
+    supports_credentials=True)
 
 app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'upload')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB

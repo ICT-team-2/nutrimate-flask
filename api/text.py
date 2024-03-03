@@ -4,6 +4,8 @@ from tensorflow.keras.models import load_model
 from konlpy.tag import Okt
 from flask_restful import Resource,reqparse
 import pickle
+import configparser
+import cx_Oracle
 
 # 불용어
 stopwords = ['의','가','이','은','들','는','좀','잘','걍','과','도','를','으로','자','에','와','한','하다']
@@ -32,14 +34,29 @@ def sentiment_predict(new_sentence):
 
 # 리뷰 분석 API
 class Text(Resource):
-    def post(self):
+    def get(self):
         try:
-            parser = reqparse.RequestParser()
-            parser.add_argument('reviews', type=list, location='json')
-            args = parser.parse_args()
+            cmtContent=[]
+            config = configparser.ConfigParser()
+            result = config.read('oracle.ini', encoding='utf8')
 
-            reviews = args['reviews']
-            sentiment_scores = [sentiment_predict(review) for review in reviews]
+            with cx_Oracle.connect(user=config['ORACLE']['USER'],
+                                   password=config['ORACLE']['PASSWORD'],
+                                   dsn=config['ORACLE']['URL'], encoding="UTF-8") as conn:
+                # 3.쿼리 실행을 위한 커서객체 얻기
+                cursor = conn.cursor()
+                # 4.쿼리 실행
+                cursor.execute(''' SELECT c.cmt_content
+		        FROM challengecomments cc  JOIN comments c ON c.cmt_id=cc.cmt_id
+		        WHERE c.blocked='N' AND c.deleted='N'
+		        ORDER BY c.created_date DESC''')
+                # 5.패치
+                rows = cursor.fetchall()
+                for cmt_contents in rows:
+                    cmtContent.append(cmt_contents[0])
+                cursor.close()
+
+            sentiment_scores = [sentiment_predict(review) for review in cmtContent]
 
             positive_reviews = sum(1 for score in sentiment_scores if score > 0.5)
             negative_reviews = len(sentiment_scores) - positive_reviews
