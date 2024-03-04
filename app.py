@@ -11,7 +11,7 @@ from api.ChatBot import ChatBot
 # OCR서비스용
 from api.ocr import OCR
 # ServiceWorker서비스용
-# from api.ServiceWorker import ServiceWorker
+from api.ServiceWorker import ServiceWorker
 
 from api.recipe import RecipeResource
 
@@ -21,6 +21,10 @@ from api.news import Navernews, Exercise, Nutrients
 from api.restaurant import RestaurantRecommend
 # 헬스장 추천
 from api.gym import GymRecommend
+
+from api.foodDetection import FoodDetection
+
+
 
 
 app = Flask(__name__)
@@ -63,6 +67,8 @@ Post /serviceworker
 api.add_resource(ServiceWorker, '/serviceworker')
 api.add_resource(ProfileResource, '/profile/img')
 api.add_resource(RecipeResource, '/recipe-info')
+
+api.add_resource(FoodDetection, '/food')
 
 if __name__ == '__main__':
     uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
