@@ -100,7 +100,6 @@ FaceEmotion
 Post /face
 '''
 api.add_resource(FaceEmotion, '/face')
-api.add_resource(ServiceWorker, '/serviceworker')
 api.add_resource(ProfileResource, '/profile/img')
 api.add_resource(RecipeResource, '/recipe-info')
 api.add_resource(FoodDetection, '/food')

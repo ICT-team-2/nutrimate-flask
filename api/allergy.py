@@ -3,14 +3,14 @@ from flask import request, jsonify
 import requests
 import json
 import cx_Oracle
+from model.oracle_connection import OracleConnection
 
 
 class Allergy(Resource):
     
     def __init__(self):
-        self.conn = cx_Oracle.connect(user='ICT', password='ICT1234',
-            dsn='db-ict-2.c3w6gsuguk59.ap-southeast-2.rds.amazonaws.com:1521/orcl',
-            encoding="UTF-8")
+        self.oracle = OracleConnection()
+        self.conn = self.oracle.connect()
         self.cursor = self.conn.cursor()
     
     def get(self):
