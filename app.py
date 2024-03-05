@@ -22,11 +22,12 @@ from api.recipe import RecipeResource
 
 from api.news import Navernews, Exercise, Nutrients
 
+# 얼굴 감정 분석용
+from api.face_emotion import FaceEmotion
 # 식당 추천
 from api.restaurant import RestaurantRecommend
 # 헬스장 추천
 from api.gym import GymRecommend
-
 from api.foodDetection import FoodDetection
 
 
@@ -77,10 +78,15 @@ api.add_resource(Word, '/word')
 ServiceWorker
 Post /serviceworker
 '''
+# api.add_resource(ServiceWorker, '/serviceworker')
+'''
+FaceEmotion
+Post /face
+'''
+api.add_resource(FaceEmotion, '/face')
 api.add_resource(ServiceWorker, '/serviceworker')
 api.add_resource(ProfileResource, '/profile/img')
 api.add_resource(RecipeResource, '/recipe-info')
-
 api.add_resource(FoodDetection, '/food')
 
 if __name__ == '__main__':
