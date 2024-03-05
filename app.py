@@ -11,7 +11,7 @@ from api.ChatBot import ChatBot
 # OCR서비스용
 from api.ocr import OCR
 # ServiceWorker서비스용
-# from api.ServiceWorker import ServiceWorker
+from api.ServiceWorker import ServiceWorker
 from api.walk_course import WalkCourse
 
 from api.recipe import RecipeResource
