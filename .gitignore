@@ -9,7 +9,8 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-
+.idea/*
+*.ini
 # AWS User-specific
 .idea/**/aws.xml
 

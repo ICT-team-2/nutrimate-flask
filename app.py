@@ -10,6 +10,10 @@ from api.profile import ProfileResource
 from api.ChatBot import ChatBot
 # OCR서비스용
 from api.ocr import OCR
+# 텍스트 감정분석용
+from api.text import Text
+# 워드클라우드 생성용
+from api.word import Word
 # ServiceWorker서비스용
 from api.ServiceWorker import ServiceWorker
 from api.walk_course import WalkCourse
@@ -24,8 +28,6 @@ from api.restaurant import RestaurantRecommend
 from api.gym import GymRecommend
 
 from api.foodDetection import FoodDetection
-
-
 
 
 app = Flask(__name__)
@@ -60,6 +62,16 @@ OCR
 POST /ocr
 '''
 api.add_resource(OCR, '/ocr')
+'''
+Text
+POST /text
+'''
+api.add_resource(Text, '/text')
+'''
+Word
+POST /word
+'''
+api.add_resource(Word, '/word')
 
 '''
 ServiceWorker
