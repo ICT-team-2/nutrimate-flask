@@ -12,6 +12,7 @@ from api.ChatBot import ChatBot
 from api.ocr import OCR
 # ServiceWorker서비스용
 from api.ServiceWorker import ServiceWorker
+from api.walk_course import WalkCourse
 
 from api.recipe import RecipeResource
 
@@ -49,6 +50,7 @@ api.add_resource(ChatBot, '/chatbot')
 api.add_resource(Navernews, '/navernews')
 api.add_resource(Exercise, '/exercise-info')
 api.add_resource(Nutrients, '/nutrients-info')
+api.add_resource(WalkCourse, '/walk')
 
 api.add_resource(RestaurantRecommend, '/restaurant')
 api.add_resource(GymRecommend, '/gym')
@@ -63,7 +65,6 @@ api.add_resource(OCR, '/ocr')
 ServiceWorker
 Post /serviceworker
 '''
-
 api.add_resource(ServiceWorker, '/serviceworker')
 api.add_resource(ProfileResource, '/profile/img')
 api.add_resource(RecipeResource, '/recipe-info')
