@@ -22,6 +22,11 @@ from api.recipe import RecipeResource
 
 from api.news import Navernews, Exercise, Nutrients
 
+# 알레르기별 음식 추천용
+from api.allergy import Allergy
+# 가격별 음식 추천용
+from api.price import Price
+
 # 얼굴 감정 분석용
 from api.face_emotion import FaceEmotion
 # 식당 추천
@@ -78,13 +83,23 @@ api.add_resource(Word, '/word')
 ServiceWorker
 Post /serviceworker
 '''
-# api.add_resource(ServiceWorker, '/serviceworker')
+
+api.add_resource(ServiceWorker, '/serviceworker')
+'''
+Allergy
+Post /allergy
+'''
+api.add_resource(Allergy, '/allergy')
+'''
+Pricd
+Post /price
+'''
+api.add_resource(Price, '/price')
 '''
 FaceEmotion
 Post /face
 '''
 api.add_resource(FaceEmotion, '/face')
-api.add_resource(ServiceWorker, '/serviceworker')
 api.add_resource(ProfileResource, '/profile/img')
 api.add_resource(RecipeResource, '/recipe-info')
 api.add_resource(FoodDetection, '/food')

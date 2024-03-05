@@ -3,9 +3,9 @@ import csv
 
 from oracle_connection import OracleConnection
 # db -> csv로 데이터 추출하는 코드(중요x)
-
+oracle = OracleConnection()
 # 오라클 데이터베이스 연결 설정
-connection = OracleConnection().connect()
+connection = oracle.connect()
 # 데이터베이스 버전 확인
 print(connection.version)
 
