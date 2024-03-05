@@ -8,7 +8,7 @@ import openai
 #https://platform.openai.com/docs/guides/gpt/chat-completions-api의 질의어로 테스트해보자
 client = OpenAI(
     # This is the default and can be omitted
-    api_key=os.environ.get("OPENAI_API_KEY"),
+    api_key="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",
 )
 
 
