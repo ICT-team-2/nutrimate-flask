@@ -22,6 +22,9 @@ from api.recipe import RecipeResource
 
 from api.news import Navernews, Exercise, Nutrients
 
+# 식단 추천시스템용
+from api.diet import DietRecommend
+
 # 알레르기별 음식 추천용
 from api.allergy import Allergy
 # 가격별 음식 추천용
@@ -83,8 +86,12 @@ api.add_resource(Word, '/word')
 ServiceWorker
 Post /serviceworker
 '''
-
 api.add_resource(ServiceWorker, '/serviceworker')
+'''
+RecommendAlgorithm
+Get /diet
+'''
+api.add_resource(DietRecommend, '/diet')
 '''
 Allergy
 Post /allergy
