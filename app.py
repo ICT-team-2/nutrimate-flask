@@ -22,12 +22,11 @@ from api.recipe import RecipeResource
 
 from api.news import Navernews, Exercise, Nutrients
 
-<< << << < HEAD
 # 알레르기별 음식 추천용
 from api.allergy import Allergy
 # 가격별 음식 추천용
 from api.price import Price
-== == == =
+
 # 얼굴 감정 분석용
 from api.face_emotion import FaceEmotion
 # 식당 추천
@@ -36,8 +35,6 @@ from api.restaurant import RestaurantRecommend
 from api.gym import GymRecommend
 from api.foodDetection import FoodDetection
 
->> >> >> > 9
-d764dc661a9e75b17221b7146405156e77a7838
 
 app = Flask(__name__)
 CORS(app,
