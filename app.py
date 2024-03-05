@@ -5,20 +5,39 @@ import os
 from asgiref.wsgi import WsgiToAsgi
 import uvicorn
 
+from api.profile import ProfileResource
+
 from api.ChatBot import ChatBot
 # OCR서비스용
 from api.ocr import OCR
+# 텍스트 감정분석용
+from api.text import Text
+# 워드클라우드 생성용
+from api.word import Word
 # ServiceWorker서비스용
-#from api.ServiceWorker import ServiceWorker
+from api.ServiceWorker import ServiceWorker
+from api.walk_course import WalkCourse
 
 from api.recipe import RecipeResource
 
 from api.news import Navernews, Exercise, Nutrients
 
-#알레르기별 음식 추천용
+<< << << < HEAD
+# 알레르기별 음식 추천용
 from api.allergy import Allergy
-#가격별 음식 추천용
+# 가격별 음식 추천용
 from api.price import Price
+== == == =
+# 얼굴 감정 분석용
+from api.face_emotion import FaceEmotion
+# 식당 추천
+from api.restaurant import RestaurantRecommend
+# 헬스장 추천
+from api.gym import GymRecommend
+from api.foodDetection import FoodDetection
+
+>> >> >> > 9
+d764dc661a9e75b17221b7146405156e77a7838
 
 app = Flask(__name__)
 CORS(app,
@@ -36,35 +55,58 @@ def home():
     return "Hello, ICT!"
 
 
-api.add_resource(RecipeResource, '/recipe-info')
-
 asgi_app = WsgiToAsgi(app)
 
 api.add_resource(ChatBot, '/chatbot')
 api.add_resource(Navernews, '/navernews')
 api.add_resource(Exercise, '/exercise-info')
 api.add_resource(Nutrients, '/nutrients-info')
+api.add_resource(WalkCourse, '/walk')
+
+api.add_resource(RestaurantRecommend, '/restaurant')
+api.add_resource(GymRecommend, '/gym')
+
 '''
 OCR
 POST /ocr
 '''
 api.add_resource(OCR, '/ocr')
+'''
+Text
+POST /text
+'''
+api.add_resource(Text, '/text')
+'''
+Word
+POST /word
+'''
+api.add_resource(Word, '/word')
 
 '''
 ServiceWorker
 Post /serviceworker
 '''
-#api.add_resource(ServiceWorker, '/serviceworker')
+
+api.add_resource(ServiceWorker, '/serviceworker')
 '''
 Allergy
 Post /allergy
 '''
-api.add_resource(Allergy,'/allergy')
+api.add_resource(Allergy, '/allergy')
 '''
 Pricd
 Post /price
 '''
-api.add_resource(Price,'/price')
+api.add_resource(Price, '/price')
+'''
+FaceEmotion
+Post /face
+'''
+api.add_resource(FaceEmotion, '/face')
+api.add_resource(ServiceWorker, '/serviceworker')
+api.add_resource(ProfileResource, '/profile/img')
+api.add_resource(RecipeResource, '/recipe-info')
+api.add_resource(FoodDetection, '/food')
 
 if __name__ == '__main__':
     uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
