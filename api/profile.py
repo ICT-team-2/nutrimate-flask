@@ -10,7 +10,7 @@ class ProfileResource(Resource):
     
     def __init__(self):
         self.client = OpenAI(
-            api_key="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"
+            api_key="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"
         )
         self.dall_e_model = "dall-e-3"
     
