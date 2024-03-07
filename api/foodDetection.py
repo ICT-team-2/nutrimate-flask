@@ -82,7 +82,7 @@ class FoodDetection(Resource):
                 
                 # 음식 정보를 food_infos 리스트에 추가합니다.
                 food_infos.append({
-                    'foodId': food_info['FOOD_ID'],
+                    'foodId': str(food_info['FOOD_ID']),
                     'foodName': food_info['FOOD_NAME'],
                     'foodCal': food_info['FOOD_CAL'],
                     'foodProtein': food_info['FOOD_PROTEIN'],
