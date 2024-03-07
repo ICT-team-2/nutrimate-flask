@@ -5,13 +5,41 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from konlpy.tag import Kkma
 import base64
+import cx_Oracle
+import configparser
+from PIL import Image
 
 class Word(Resource):
-    def post(self):
+    def get(self):
         try:
             # CSV 파일에서 리뷰들을 읽어오기
-            df = pd.read_csv('reviews.csv', names=['review'], encoding='utf-8')
+            config = configparser.ConfigParser()
+            result = config.read('oracle.ini', encoding='utf8')
 
+            with cx_Oracle.connect(user=config['ORACLE']['USER'],
+                                   password=config['ORACLE']['PASSWORD'],
+                                   dsn=config['ORACLE']['URL'], encoding="UTF-8") as conn:
+                # 3.쿼리 실행을 위한 커서객체 얻기
+                cursor = conn.cursor()
+                # 4.쿼리 실행
+                cursor.execute(''' SELECT b.board_category, b.board_content, b.board_title, c.cmt_content, ht.tag_name
+                                    FROM board b 
+                                    full join comments c ON b.board_id = c.board_id 
+                                    full join BOARD_HASHTAG bh ON b.board_id = bh.board_id 
+                                    full join hashTag ht ON ht.tag_id = bh.tag_id
+                                    WHERE c.blocked = 'N' AND c.deleted = 'N'
+            		        ''')
+                # 5.패치
+                rows = cursor.fetchall()
+                boardContent = []
+                for row in rows:
+                    boardContent.append(row[0])
+                    boardContent.append(row[1])
+                    boardContent.append(row[2])
+                    boardContent.append(row[3])
+                    boardContent.append(row[4])
+    
+            df = pd.DataFrame(boardContent, columns=['review'])
             df['review'] = df['review'].str.replace('[^가-힣]', ' ', regex=True)
 
             kkma = Kkma() # 형태소 분석기
