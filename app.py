@@ -37,12 +37,17 @@ from api.restaurant import RestaurantRecommend
 # 헬스장 추천
 from api.gym import GymRecommend
 from api.foodDetection import FoodDetection
+import configparser
 
+config = configparser.ConfigParser()
+config.read('server.ini')
 
 app = Flask(__name__)
+
 CORS(app,
     resources={r'*': {'origins': [
-        'http://localhost:5555', 'https://192.168.0.82:5555'
+        'http://localhost:5555', 'https://192.168.0.82:5555',
+        config['DEFAULT']['FRONTEND_URL']
     ]}},
     supports_credentials=True)
 
