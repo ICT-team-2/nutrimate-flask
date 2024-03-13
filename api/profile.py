@@ -9,9 +9,7 @@ import base64
 class ProfileResource(Resource):
     
     def __init__(self):
-        self.client = OpenAI(
-            api_key="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"
-        )
+        self.client = OpenAI()
         self.dall_e_model = "dall-e-3"
     
     def post(self):

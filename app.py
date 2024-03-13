@@ -41,7 +41,9 @@ from api.foodDetection import FoodDetection
 
 app = Flask(__name__)
 CORS(app,
-    resources={r'*': {'origins': 'http://localhost:5555'}},
+    resources={r'*': {'origins': [
+        'http://localhost:5555', 'https://192.168.0.82:5555'
+    ]}},
     supports_credentials=True)
 
 app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'upload')
