@@ -37,6 +37,7 @@ from api.restaurant import RestaurantRecommend
 # 헬스장 추천
 from api.gym import GymRecommend
 from api.foodDetection import FoodDetection
+import configparser
 
 #당뇨병 예측
 from api.health import PredictDiabetes
@@ -45,10 +46,15 @@ from api.hypertensionPrediction import HypertensionPrediction
 #건강예측 후 추천식단
 from api.health_meals import HealthMeal
 
+config = configparser.ConfigParser()
+config.read('server.ini')
 
 app = Flask(__name__)
 CORS(app,
-    resources={r'*': {'origins': 'http://localhost:5555'}},
+    resources={r'*': {'origins': [
+        'http://localhost:5555', 'https://192.168.0.82:5555',
+        config['DEFAULT']['FRONTEND_URL']
+    ]}},
     supports_credentials=True)
 
 app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'upload')
