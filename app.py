@@ -39,11 +39,17 @@ from api.gym import GymRecommend
 from api.foodDetection import FoodDetection
 import configparser
 
+#당뇨병 예측
+from api.health import PredictDiabetes
+#고혈압 예측
+from api.hypertensionPrediction import HypertensionPrediction
+#건강예측 후 추천식단
+from api.health_meals import HealthMeal
+
 config = configparser.ConfigParser()
 config.read('server.ini')
 
 app = Flask(__name__)
-
 CORS(app,
     resources={r'*': {'origins': [
         'http://localhost:5555', 'https://192.168.0.82:5555',
@@ -117,6 +123,10 @@ api.add_resource(FaceEmotion, '/face')
 api.add_resource(ProfileResource, '/profile/img')
 api.add_resource(RecipeResource, '/recipe-info')
 api.add_resource(FoodDetection, '/food')
+
+api.add_resource(PredictDiabetes,'/health')
+api.add_resource(HypertensionPrediction,'/hypertension')
+api.add_resource(HealthMeal,'/meal')
 
 if __name__ == '__main__':
     uvicorn.run(asgi_app, port=2222, host='0.0.0.0')
