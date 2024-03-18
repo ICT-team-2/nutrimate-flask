@@ -23,4 +23,4 @@
 
 ppt - [ICT2조 - Nutrimate 프로젝트 발표 PPT - Google Slides](https://docs.google.com/presentation/d/1_INotEFLFOA10rEYaUU959mapUc27RCaYhHVxHSZfq4/edit?usp=sharing)
 
-[한국 ICT 인재개발원 NUTRIMATE팀 프로젝트 발표 영상입니다 - YouTube](https://youtu.be/9v_CzsQ41Hw)
+[한국 ICT 인재개발원 NUTRIMATE팀 프로젝트 발표 영상입니다 - YouTube](https://youtu.be/UZtHTS61eHA)
