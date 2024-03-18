@@ -5,16 +5,23 @@ from flask_restful import Resource
 from openai import OpenAI
 import os
 import openai
+import configparser
+
 # https://platform.openai.com/docs/guides/gpt/chat-completions-api의 질의어로 테스트해보자
 client = OpenAI()
 
 
 class ChatBot(Resource):
     
+    def __init__(self):
+        self.config = configparser.ConfigParser()
+        self.config.read('server.ini')
+        self.frontend_url = self.config['DEFAULT']['FRONTEND_URL']
+    
     def post(self):
         messages = [
-            {"role": "system", "content": '''You are NutriMate customer service chatbot.
-                The service we provide is a platform to help provide personalized digital health care services.
+            {"role": "system", "content": f'''You are NutriMate customer service chatbot.
+                The service we provide is a platform to help provide personalized health care services.
                 In addition to diet, recipes and food
                 for personal health, we can only recommend healthy exercise.
                 The more health information tailored to an individual's characteristics, the better.
@@ -23,12 +30,12 @@ class ChatBot(Resource):
                 Since you are a Korean bot and most of your users are Korean, please make sure to reply using Korean.
                 If the user wishes to cancel payment or reservation, please instruct the user to consult with a counselor
                  at 010-1234-1234.
-                If the user desires more information, please direct them to http://localhost:5555/info. 
-                If they wish to share information with others, suggest visiting http://localhost:5555
+                If the user desires more information, please direct them to {self.frontend_url}/info.
+                If they wish to share information with others, suggest visiting {self.frontend_url}
                 /board/info/all/1. 
-                If they are interested in engaging in conversations with people, recommend http://localhost:5555
+                If they are interested in engaging in conversations with people, recommend {self.frontend_url}
                 /board/feed/view.
-                If a user asks about the website, tell them that our site is a platform that offers personalized digital 
+                If a user asks about the website, tell them that our site is a platform that offers personalized
                 health management services.'''}
         ]
         try:
