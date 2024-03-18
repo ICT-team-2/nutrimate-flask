@@ -6,7 +6,7 @@
 ## 팀원 소개
 
 
-<img src="https://github.com/ICT-team-2/nutrimate-frontend/assets/68010205/2caad3b0-f639-4909-b368-680f47701016" title="" alt="" width="700">
+<img src="https://github.com/ICT-team-2/nutrimate-frontend/assets/68010205/262b2649-d225-4e7e-b336-dacfdf0d7c01" title="" alt="" width="700">
 
 
 ## 개발 언어/Framework/Library
