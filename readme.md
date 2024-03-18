@@ -1,25 +1,21 @@
 # Nutrimate
 
----
 
 <img title="" src="https://github.com/ICT-team-2/nutrimate-frontend/assets/68010205/4b1f5227-7ced-49c0-b0c1-971340b543a8" alt="" width="700">
 
 ## 팀원 소개
 
----
 
 <img src="https://github.com/ICT-team-2/nutrimate-frontend/assets/68010205/2caad3b0-f639-4909-b368-680f47701016" title="" alt="" width="700">
 
 
 ## 개발 언어/Framework/Library
 
----
 
 <img src="https://github.com/ICT-team-2/nutrimate-frontend/assets/68010205/f6dab2d0-0d3a-4084-8f97-2206f33ef980" title="" alt="" width="700">
 
 ## 주요 기능
 
----
 
 <img src="https://github.com/ICT-team-2/nutrimate-frontend/assets/68010205/e604902b-fac7-406e-8e45-fa21e891a06c" title="" alt="" width="700">
 
